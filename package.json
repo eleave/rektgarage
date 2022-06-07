@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel",
     "prebuild": "rm -rf dist",
-    "build": "parcel build --no-source-maps"
+    "build": "parcel build --no-source-maps --public-url '.'"
   },
   "author": "RektGarage",
   "license": "ISC",
