@@ -1,0 +1,104 @@
+$asideMinWidth: 380px;
+@screen md {
+  @media (-webkit-min-device-pixel-ratio:1.25) {
+    * {
+      zoom: 0.95;
+    }
+    .container {
+      max-width: 1024px;
+    }
+  }
+}
+@layer base {
+  html, body {
+    @apply font-light bg-slate-100;
+    font-family: 'Merriweather Sans', sans-serif;
+    min-width: calc($asideMinWidth + 2rem);
+  }
+  b, strong {
+    @apply font-bold;
+  }
+  a {
+    @apply text-blue-600 underline;
+    &:hover {
+      @apply text-blue-800 no-underline;
+    }
+  }
+  h1, h2, h3 {
+    @apply uppercase font-bold;
+  }
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  h4 {
+    @apply font-bold text-base
+  } 
+}
+
+/* Container */
+.container {
+  @apply px-4 lg:max-w-[1200px] lg:w-[90%];
+}
+main {    
+  @apply container flex flex-col lg:grid py-12 gap-12;
+  grid-template-columns: auto $asideMinWidth;
+  > article {
+    @apply space-y-8 order-2 lg:order-1;
+    > section {
+      @apply lg:max-w-[640px];
+      &:first-child {
+        @apply lg:max-w-none;
+      }
+    }
+  }
+  > aside {
+    @apply order-1 lg:order-2;
+    min-width: $asideMinWidth;
+  }
+}
+#banner {
+  background-color: black;
+}
+
+/* Button */
+button, [type="button"], [type="reset"], [type="submit"] {
+  @apply rounded-lg px-12 py-3 text-lg sm:text-xl uppercase whitespace-nowrap;
+  font-family: 'Titan One', cursive;
+}
+:disabled:not(.stay_colored) {
+  @apply bg-gray-300 text-gray-400 hover:bg-gray-300;
+  &:hover {
+    @apply bg-gray-300 hover:bg-gray-300;
+  }
+  cursor: not-allowed;
+}
+
+/* Card */
+.card {
+  @apply bg-white rounded-lg shadow-lg text-center space-y-6 p-8 lg:max-w-[450px];
+  &.card__invisible {
+    @apply bg-transparent shadow-none p-0;
+  }
+  h2 {
+    @apply whitespace-nowrap;
+  }
+  button:not(.w-auto) {
+    @apply w-[220px] px-4;
+  }
+}
+
+/* Briefly Big Number */
+.big-number {
+  @apply w-12 text-[4rem];
+  font-family: 'Titan One', cursive;
+}
+.circle-number {
+  @apply bg-white rounded-full w-24 h-24 shadow-lg text-center text-[4rem];
+  font-family: 'Titan One', cursive;
+}
