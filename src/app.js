@@ -31,8 +31,32 @@ function counterTotalization(submit) {
   minus.onclick = (e) => setNumber(parseInt(input.value) - 1);
 }
 
+/* Toastify initialization */
+function ToastifyInitialization() {
+  Toastify({
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit!",
+    duration: 3000,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "center", // `left`, `center` or `right`
+    stopOnFocus: true,
+    style: {
+      background: "#fff2c5",
+      borderRadius: ".5rem",
+      color: "black",
+      padding: "1rem 2rem",
+    },
+    offset: {
+      x: "2em",
+      y: "2em",
+    },
+    onClick: function () {}, // Callback after click
+  }).showToast();
+}
+
 /* Initialization */
 window.addEventListener("DOMContentLoaded", () => {
   const submit = document.getElementById("submitRegistration");
   if (submit) counterTotalization(submit);
+  ToastifyInitialization();
 });

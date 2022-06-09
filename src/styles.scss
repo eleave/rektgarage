@@ -15,6 +15,9 @@ $asideMinWidth: 380px;
     font-family: 'Merriweather Sans', sans-serif;
     min-width: calc($asideMinWidth + 2rem);
   }
+  body {
+    background: url("./img/bg-abstract.jpg") no-repeat center center / cover;
+  }
   b, strong {
     @apply font-bold;
   }
@@ -101,4 +104,20 @@ button, [type="button"], [type="reset"], [type="submit"] {
 .circle-number {
   @apply bg-white rounded-full w-24 h-24 shadow-lg text-center text-[4rem];
   font-family: 'Titan One', cursive;
+}
+
+/* Toastify */
+.toast-close {
+  background-color: #ff3e3e;
+  opacity: 1;
+  border-radius: 2rem;
+  color: white;
+  margin-left: .5rem;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
 }
