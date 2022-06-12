@@ -1,9 +1,6 @@
 $asideMinWidth: 380px;
 @screen md {
-  @media (-webkit-min-device-pixel-ratio:1.25) {
-    * {
-      zoom: 0.95;
-    }
+  @media (-webkit-min-device-pixel-ratio: 1.25) {
     .container {
       max-width: 1024px;
     }

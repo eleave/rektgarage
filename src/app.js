@@ -58,5 +58,5 @@ function ToastifyInitialization() {
 window.addEventListener("DOMContentLoaded", () => {
   const submit = document.getElementById("submitRegistration");
   if (submit) counterTotalization(submit);
-  ToastifyInitialization();
+  // ToastifyInitialization();
 });
