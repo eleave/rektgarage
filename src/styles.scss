@@ -1,11 +1,4 @@
-$asideMinWidth: 380px;
-@screen md {
-  @media (-webkit-min-device-pixel-ratio: 1.25) {
-    .container {
-      max-width: 1024px;
-    }
-  }
-}
+$asideMinWidth: 370px;
 @layer base {
   html, body {
     @apply font-light bg-slate-100;
@@ -43,7 +36,7 @@ $asideMinWidth: 380px;
 
 /* Container */
 .container {
-  @apply px-4 lg:max-w-[1200px] lg:w-[90%];
+  @apply px-4 sm:max-w-[90%] lg:max-w-[1200px] w-[90%];
 }
 main {    
   @apply container flex flex-col lg:grid py-12 gap-12;
@@ -68,7 +61,7 @@ main {
 
 /* Button */
 button, [type="button"], [type="reset"], [type="submit"] {
-  @apply rounded-lg px-12 py-3 text-lg sm:text-xl uppercase whitespace-nowrap;
+  @apply rounded-lg px-12 py-3 text-xl uppercase whitespace-nowrap;
   font-family: 'Titan One', cursive;
 }
 :disabled:not(.stay_colored) {
@@ -117,4 +110,32 @@ button, [type="button"], [type="reset"], [type="submit"] {
   text-align: center;
   display: inline-block;
   vertical-align: top;
+}
+
+/* Big scale support */
+@media (-webkit-min-device-pixel-ratio: 1.25) {
+  body {
+    font-size: .85rem;
+    .text-lg {
+      font-size: 1rem;
+      line-height: 1.6rem;
+    }
+    .text-xl {
+      font-size: 1.3rem;
+    }
+    h1 {
+      font-size: 2.4rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+    button, [type="button"], [type="reset"], [type="submit"] {
+      font-size: 1.4rem !important;
+      line-height: normal !important;
+    }
+  }
 }
